@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html><!-- servo_control.html -->
+<head>
+<meta charset="utf-8">
+<script src="jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	
+	var accessToken="99ff4b7bdd6e1adb1ca6445580a1ce317b97a06c";
+	var deviceId="280026001651353530333533";
+	var url = "https://api.particle.io/v1/devices/" + deviceId + "/servo";
+
+function servoDroite()
+{
+	$.post(url, {params: "droite", access_token: accessToken });
+}  
+
+function servoGauche()
+{
+	$.post(url, {params: "gauche", access_token: accessToken });
+}  
+
+</script>
+</head>	
+
+<body>
+
+<h1>On/Off Control</h1>	
+	
+<input type="button" onClick="servoDroite()" value="Gauche"/>
+<input type="button" onClick="servoGauche()" value="Droite"/>
+	
+</body>
+</html>
